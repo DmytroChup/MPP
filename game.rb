@@ -10,7 +10,7 @@ def foo(player_element)
     elsif (player_element == "Scissors" && bot_element == "Paper") ||
           (player_element == "Paper" && bot_element == "Stone") ||
           (player_element == "Stone" && bot_element == "Scissors")
-      puts "You win"''
+      puts "You win"
     else
       puts "You lose"
     end
