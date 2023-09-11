@@ -4,7 +4,7 @@ def foo(player_element)
     puts "Enter an existing value"
   else
     bot_element = elements.sample
-    puts bot_element
+    puts "Bot choice: #{bot_element}"
     if player_element == bot_element
       puts "It's draw"
     elsif (player_element == "Scissors" && bot_element == "Paper") ||
