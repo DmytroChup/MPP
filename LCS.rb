@@ -80,5 +80,6 @@ def calc_cache_pos(indexes, strings)
   pos
 end
 
+
 strings = ["ABCD", "ACD"]
 puts lcs(strings)
