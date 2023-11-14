@@ -23,5 +23,3 @@ CSV.open('library/libraries.csv', "wb") do |csv|
     id += 1
   end
 end
-
-#(//*[@id="mw-content-text"]/div[1]/ul[position() >= 1 and position() <= 26])//li
