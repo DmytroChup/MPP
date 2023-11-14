@@ -7,14 +7,11 @@ url = 'https://en.wikipedia.org/wiki/List_of_libraries'
 html = URI.open(url)
 doc = Nokogiri::HTML(html)
 
-div_element = doc.css("div#mw-content-text")
-div_element.css("div.noprint").remove
-div_element = div_element.css("ul li")
+div_element = doc.xpath('(//*[@id="mw-content-text"]/div[1]/ul[position() >= 1 and position() <= 26])//li')
 
 libraries = []
 div_element.each do |link|
-  text = link.text.strip
-  break if text.start_with?("Esperanto libraries")
+  text = link.text.strip.split(',')[0]
   libraries << text
 end
 
@@ -26,3 +23,5 @@ CSV.open('library/libraries.csv', "wb") do |csv|
     id += 1
   end
 end
+
+#(//*[@id="mw-content-text"]/div[1]/ul[position() >= 1 and position() <= 26])//li
