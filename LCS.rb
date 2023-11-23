@@ -8,8 +8,8 @@ def lcs(strings)
     cache_size *= str.length
   end
 
-  cache = Array.new(cache_size)
-  indexes = Array.new(strings.length)
+  cache = []
+  indexes = []
 
   strings.each_with_index do |str, i|
     indexes[i] = str.length - 1
@@ -81,5 +81,5 @@ def calc_cache_pos(indexes, strings)
 end
 
 
-strings = ["ABCD", "ACD"]
+strings = ["ABDCFFF", "ADFCCF", "ADCFFD", "AD", "AFAAAAAD"]
 puts lcs(strings)
